@@ -1,0 +1,39 @@
+<ion-view class="walkthrough-view" cache-view="false">
+  <ion-content scroll="false">
+    <div class="top-content row">
+      <ion-slide-box delegate-handle="walkthrough-slider" show-pager="true">
+        <ion-slide>
+        
+          <div class="row slide-content">
+            <div class="col">
+              <h3 class="slide-h"></h3>
+             
+                <img class="slide-image" ng-src="img/logo.png" ui-sref="login"/>
+             
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="row slide-content">
+            <div class="col">
+              <h3 class="slide-h">Bem vindos</h3>
+              <img class="slide-image" ng-src="img/logo.png"/>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+    <div class="bottom-content row">
+      <div class="col col-center">
+        <a class="button button-outline button-energized button-block" ui-sref="login">
+          Logar
+        </a>
+      </div>
+      <div class="col col-center">
+        <a class="button button-outline button-energized button-block" ui-sref="register">
+          Registrar
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

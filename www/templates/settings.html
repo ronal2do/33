@@ -1,0 +1,38 @@
+<ion-view class="settings-view">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-title>
+    <span>Configurações</span>
+  </ion-nav-title>
+  <ion-content>
+    <ul class="list">
+
+     <div class="item item-divider">Opções</div>
+      <a class="item option" ng-controller="EmailSenderCtrl" ng-click="sendFeedback()">
+        <i class="icon ion-chatbox dark"></i>
+        <span class="title">Opinião</span>
+      </a>
+      <a class="item option" ng-controller="RateAppCtrl" ng-click="rateApp()">
+        <i class="icon ion-heart assertive"></i>
+        <span class="title">Classifique este APP</span>
+      </a>
+      
+      <div class="item item-divider">Legal</div>
+
+      <a class="item" href="" ng-click="showTerms()">Termos de uso</a>
+      <a class="item" href="" ng-click="showCredits()">Creditos</a>
+
+      <div class="item item-divider">Minha conta</div>
+        <a class="item option" href="" ng-click="showFAQS()">
+            <i class="icon ion-person"></i>
+            <span class="title"> Foto</span>
+        </a>
+      <a class="item option" ng-click="showLogOutMenu()">
+        <i class="icon ion-power"></i>
+        <span class="title">Sair </span>
+      </a>
+
+    </ul>
+  </ion-content>
+</ion-view>

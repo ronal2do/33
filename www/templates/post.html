@@ -1,0 +1,47 @@
+<ion-view class="post-view">
+  <ion-nav-title>
+    <span ng-bind-html="post.title | rawHtml"></span>
+  </ion-nav-title>
+    
+  <ion-content>
+    <div class="post">
+      <img ng-src="{{ post.custom_fields.image_url[0] }}"/>
+        <h1>
+        <i class="icon ion-calendar"> </i>{{post.custom_fields.event_starts[0] | date:'fullDate'}} às {{post.custom_fields.event_starts[0] | date:'shortTime'}} </h1>
+      <div class="card-content" ng-bind-html="post.content | rawHtml"></div>
+    </div>
+    <div class="card-footer">
+      <a class="button button-outline button-block featured" ng-click="sharePost(post.custom_fields.fb_event_uri[0])">COMPARTILHAR</a>
+        <a class="button button-outline button-block featured " ng-controller="EmailSenderCtrl" ng-click="sendLista(post.title)">
+          LISTAS
+        </a>
+      
+    </div>
+    <div class="post-actions">
+        <div class="list"> <h1>Comentários
+            <a ng-show="post.comment_count > 0" class="card-button comment-count">
+        <i class="icon ion-chatbox"> </i>{{post.comment_count}}
+      </a></h1>
+        </div>
+      <div class="list">
+        <a class="item item-avatar" ng-repeat="comment in comments" href="#" ng-class="{highlighted: comment.id === new_comment_id}">
+          <img ng-src="{{comment.user_gravatar}}">
+          <h2  ng-bind-html="comment.author.name | rawHtml"><span class="comment-date" am-time-ago="comment.date"></span></h2>
+          <p class="message-content" ng-bind-html="comment.content | rawHtml"></p>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="new-comment post-footer bar bar-footer">
+    <form name="comment_form" class="row" novalidate>
+      <div class="col col-80 content col-center">
+        <input class="new-comment-message" type="text" placeholder="Envie seu comentário..." ng-model="new_comment" required></input>
+      </div>
+      <div class="col col-20 button-container col-center">
+        <button class="button button-clear send" type="submit" ng-click="addComment()" ng-disabled="comment_form.$invalid">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </ion-footer-bar>
+</ion-view>

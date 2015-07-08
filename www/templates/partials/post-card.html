@@ -1,0 +1,22 @@
+<div class="card-header">
+  <img ng-src="{{ post.custom_fields.image_url[0]}}" ui-sref="app.post({postId :post.id})"/>
+</div>
+<div class="card-content">
+    
+    <h1 ng-bind-html="post.title | rawHtml"></h1>
+    <p>
+        <i class="icon ion-calendar"> </i>
+{{post.custom_fields.event_starts[0] | date:'fullDate'}} às {{post.custom_fields.event_starts[0] | date:'shortTime'}}
+    </p>
+</div>
+<div class="card-footer">
+    <a class="card-button secondary" ng-click="sharePost(post.custom_fields.fb_event_uri[0])">COMPARTILHAR</a>
+    <a class="card-button primary" ui-sref="app.post({postId :post.id})">VER </a>
+    <a ng-show="post.comment_count > 0" class="card-button comments" ui-sref="app.post({postId :post.id})">
+    <i class="icon ion-chatbox"></i>{{post.comment_count}}
+    </a>
+    <a class="card-button secondary bookmark" ng-click="bookmarkPost(post)">
+    <i class="icon ion-bookmark"></i>
+    </a>
+</div> 
+  

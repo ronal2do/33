@@ -1,0 +1,48 @@
+<ion-view class="contact-view">
+  <ion-nav-title>
+    <span>CONTATO</span>
+  </ion-nav-title>
+  <ion-content>
+    <div>
+      <map data-tap-disabled="true" center="{{position.lat}},{{position.lng}}" zoom="15" disable-default-u-i="true">
+        <marker
+          position="{{position.lat}},{{position.lng}}"
+          title="Hello Marker"
+          visible="true">
+        </marker>
+      </map>
+    </div>
+    <div class="contact-content">
+      <div class="">
+        <p>
+          Com uma proposta sofisticada, o Club 33 está localizado na Avenida Pacaembu e foi inaugurado em setembro de 2013. A casa possui uma ampla pista, com iluminação especial e equipamento de som de última geração. Há ainda um lounge externo, no terraço da casa, onde os clientes podem ficar a vontade e apreciar a noite sem perder o pique da balada.</p>
+        <p>Para as mulheres, possui uma sala de maquiagem com o objetivo de proporcionar total conforto às suas clientes. Outros mimos ainda estão por vir e a intenção é que o Club 33 alcance o patamar das grandes baladas paulistanas.
+        </p>
+      </div>
+      <div class="contact-details-item">
+        <h4>Endereço</h4>
+        <div>Av. Pacaembú, 33 </div>
+        <div>Barra Funda | São Paulo</div>
+      </div>
+      <div class="contact-details-item">
+        <h4>Telefones:</h4>
+        <div>(11)  3666-0099</div>
+        <div>(11) 98598-8805</div>
+      </div>
+      <div class="contact-details-item">
+        <h4>Redes Sociais</h4>
+        <div class="row social-networks">
+          <div class="col"><a href="#"  onclick="window.open('https://www.facebook.com/club33saopaulo', '_system', 'location=yes'); return false;">
+                <i class="icon ion-social-facebook" style="color: #3e649e;"></i></a></div>
+          
+        </ul>
+      </div>
+      <div class="send-email">
+        <button class="button button-outline button-block featured" ng-controller="EmailSenderCtrl" ng-click="sendContactMail()">
+          Contato via e-mail
+        </button>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

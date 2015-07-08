@@ -1,0 +1,25 @@
+<ion-view class="bookmarks-view">
+  <ion-nav-title>
+    <span>Confirmadas</span>
+  </ion-nav-title>
+  <ion-content>
+    <div class="row bookmarks-container">
+      <div ng-if="bookmarks.length == 0" class="col col-center">
+        <div class="empty-results">
+          <i class="icon ion-bookmark"></i>
+          <h3 class="no-bookmarks">Não há nenhuma festa aqui ainda. Começar a participar !</h3>
+        </div>
+      </div>
+      <div ng-if="bookmarks.length > 0" class="col">
+        <ul class="bookmarks-list">
+          <li class="bookmark-item" ng-repeat="bookmark in bookmarks">
+            <a ui-sref="app.post({postId : bookmark.id})">
+              <h2 class="post-title" ng-bind-html="bookmark.title | rawHtml"></h2>
+              
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

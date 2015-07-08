@@ -1,0 +1,128 @@
+@mixin cssCalc($property, $expression) {
+  #{$property}: calc(#{$expression});
+}
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,900,700italic,900italic);
+
+.walkthrough-view, .register-view, .login-view, .forgot-password-view
+{
+  background-image: url("../img/01.jpg");
+  background-repeat: repeat;  
+  padding: 0px;
+}
+
+.register-view .input-fields .item, .login-view .input-fields .item, .forgot-password-view .input-fields .item{
+    border-width:1px !important;
+    margin:0 !important;
+    background-color: transparent !important;
+    border-top:0 !important;
+    border-right:0 !important;
+    border-left:0 !important;
+    
+  }
+
+// Walkthrough colors
+$error-color: #285675;
+
+$bg-url: url("../www/img/bg.jpg");
+$walkthrough-bg: #000;
+$walkthrough-color: #ffc900;
+
+$walkthrough-btn-bg-1: #e39904;
+$walkthrough-btn-color-1: #e39904;
+
+$walkthrough-btn-bg-2: #e39904;
+$walkthrough-btn-color-2: #e39904;
+
+
+// App colors 0086ab
+$top-bar-bg:  #060606;
+$top-bar-color: #ffc900;
+$loading-color: #FFFFFF;
+
+// background:lighten($dark,65);
+$content-bg: #EAEAEA;
+$content-color: #444444;
+$bookmarks-empty-color: #B3B2B2;
+$post-card-bg: #FFFFFF;
+$post-bg: #FFFFFF;
+$post-bg-divider:#EAEAEA; 
+$highlighted-comment: #33cd5f;
+
+$heart-color: #EF473A;
+$read-more-color: #444444;
+$anchor-color: #0086ab;
+
+
+// Main menu colors
+$main-menu-bg: #444444;
+$main-menu-color: #FFFFFF;
+
+
+// Multi menu colors
+$multi-menu-bg: $top-bar-bg;
+$multi-menu-color: #FFFFFF;
+
+$font: 'Roboto', sans-serif;
+
+$shadow: 0 2px 6px -6px $dark;
+
+// General reset styles
+*
+{
+  color: $content-color;
+  font-family: $font;
+}
+
+.bar.app-top-bar
+{
+  background-color: $top-bar-bg;
+  border: 1px $top-bar-bg;
+    -webkit-box-shadow: $shadow;
+       -moz-box-shadow: $shadow;
+            box-shadow: $shadow;
+
+  .title
+  {
+    color: $top-bar-color !important;
+    *
+    {
+      color: $top-bar-color !important;
+      font-family: $font;  
+    }
+  }
+
+  .button
+  {
+    color: $top-bar-color !important;
+    *
+    {
+      color: $top-bar-color !important;
+    }
+  }
+}
+
+.loading-container .loading
+{
+  *
+  {
+    color: $loading-color;
+  }
+}
+
+
+// OTHER VARIABLES
+
+$images-path: "../img";
+
+// Main menu
+$main-menu-heading-height: 230px;
+
+// Multi menu
+$search-height: $bar-height;
+$search-results-heading-height: 90px;
+$search-resume-height: 20px;
+
+$category-margin: 20px;
+$category-height: 85px;
+$heading-height: 90px;
